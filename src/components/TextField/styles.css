@@ -1,0 +1,58 @@
+.textfield-wrapper {
+  width: 250px;
+  background-color: #fff;
+  padding: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textfield-wrapper .textfield-data {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.textfield-wrapper .textfield-data input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  border-bottom: 2px solid silver;
+}
+
+.textfield-wrapper .textfield-data label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: silver;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.textfield-wrapper .textfield-data input:focus ~ label,
+.textfield-wrapper .textfield-data input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #4158d0;
+}
+
+.textfield-wrapper .textfield-data .underline {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+
+.textfield-wrapper .textfield-data .underline::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: #4158d0;
+}
+
+.textfield-wrapper .textfield-data input:focus ~ .underline::before,
+.textfield-wrapper .textfield-data input:valid ~ .underline::before {
+  transform: scaleX(1);
+}
